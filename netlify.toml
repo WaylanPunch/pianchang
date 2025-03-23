@@ -1,0 +1,21 @@
+[images]
+  remote_images = [
+    "https://oss-xpc0.xpccdn.com/*",
+    "https://oss-xpc6.xpccdn.com/*",
+    "https://ext.same-assets.com/*"
+  ]
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
